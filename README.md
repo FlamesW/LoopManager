@@ -147,7 +147,7 @@ LoopModule.BindRender(function(dt)
 end,"PriorityRender",Enum.RenderPriority.Camera.Value)
 ```
 * Default: end,"PriorityRender") --> Enum.RenderPriority.Last.Value
-
+----------------------------------
 - Add Task (Connections)
 
 ```lua
