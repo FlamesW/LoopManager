@@ -79,7 +79,7 @@ end,"HiFLoop")
 ```lua
 LoopModule.WhileLoop(2,function()
     print("Bye:(");
-end,"ByeFLoop",true) -- / Will wait 2 seconds before the print starts.
+end,"ByeFLoop",true) -- // Will wait 2 seconds before the print starts.
 ```
 
 --------------------
