@@ -73,8 +73,16 @@ local LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Fl
 ```lua
 LoopModule.WhileLoop(1,function()
     print("Hi:)");
-end,"FLoop")
+end,"HiFLoop")
 ```
+
+```lua
+LoopModule.WhileLoop(2,function()
+    print("Bye:(");
+end,"ByeFLoop",true) -- / Will wait 2 seconds before the print starts.
+```
+
+--------------------
 
 - Render Stepped/ HeartBeat /Stepped
 ```lua
