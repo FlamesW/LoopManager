@@ -65,7 +65,7 @@ local LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/Fl
 
 ```lua
 -- // Optionals
--- LoopModule.Debug = false;
+-- LoopModule.Debug = true;
 -- LoopModule.SafeCall = false;
 ```
 
@@ -121,6 +121,12 @@ end,"RespawnCharacter")
 
 # Misc:
 
+- Get function
+```lua
+-- // nil, true, false
+print(LoopModule:Get("Test"));
+```
+
 - Task Spesifics
 
 ```lua
@@ -135,14 +141,11 @@ LoopModule:RestartTask("MyTask");
 
 - Stop Floops
 ```lua
--- // Stops but keeps the loop.
-LoopModule:ForceStop("MyFLoop",false);
-
--- // Stops and deletes the loop from memory.
-LoopModule:ForceStop("MyFLoop",true);
+-- // Stops the loop.
+LoopModule:ForceStop("MyFLoop");
 ```
 
-- Start Floops (Cant start deleted loop)
+- Start Floops
 ```lua
 LoopModule:ForceStart("MyFLoop");
 ```
