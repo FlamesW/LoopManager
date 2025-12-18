@@ -60,7 +60,7 @@ shared.Settings.Fixer = 4;
 LoopModule.WhileLoop(0.1,function()
     if shared.Settings.AimbotChecks.WallCheck then
         print("Wall Checking.");
-		if Utils:SmartTimer("Fixer", shared.Settings.Fixer or 4) then -- // Thats how you can manage more functions in the same loop instead of creating another loop.
+		if Utils:SmartTimer("Fixer", shared.Settings.Fixer) then -- // Thats how you can manage more functions in the same loop instead of creating another loop.
 		   print("Fixing");
 		end
     end
@@ -73,6 +73,17 @@ AimbotOptionsGroup:AddToggle("AimbotWallCheckToggle",{
     Callback = function(Value)
         shared.Settings.AimbotChecks.WallCheck = Value;
     end
+})
+
+AimbotOptionsGroup:AddSlider("SettingsFixerSlider", {
+	Text = "Fixer Interval",
+	Default = shared.Settings.Fixer,
+	Min = 0,
+	Max = 5,
+	Rounding = 1,
+	Callback = function(Value)
+	    shared.Settings.Fixer = Value
+	end
 })
 ```
 
