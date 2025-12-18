@@ -20,7 +20,22 @@ shared.Settings = {
     },
 };
 
+local Utils = {}
 local LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/LoopManager/home/Module.luau"))();
+
+function Utils:SmartTimer(name, delay)
+    self._Timers = self._Timers or {}
+
+    local CT = tick()
+    local Last = self._Timers[name] or 0;
+
+    if CT - Last >= delay then
+        self._Timers[name] = CT;
+        return true;
+    end
+
+    return false;
+end
 
 -- // Obsidian Lib UI
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/deividcomsono/Obsidian/main/Library.lua"))();
@@ -40,9 +55,12 @@ local Tabs = {
 local AimbotOptionsGroup = Tabs.Main:AddLeftGroupbox("Aimbot Options","file-code-2");
 
 -- // Obsidian Lib Components.
-LoopModule.WhileLoop(1,function()
+LoopModule.WhileLoop(0.1,function()
     if shared.Settings.AimbotChecks.WallCheck then
         print("Wall Checking.");
+		if Utils:SmartTimer("Fixer", 4) then -- // prints "Fixing" every 4 seconds indefintely. (Thats how you can manage more functions in the same loop instead of creating another loop)
+		   print("Fixing");
+		end
     end
 end,"AimbotWallCheckToggle")
 
