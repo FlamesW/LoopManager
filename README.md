@@ -55,10 +55,12 @@ local Tabs = {
 local AimbotOptionsGroup = Tabs.Main:AddLeftGroupbox("Aimbot Options","file-code-2");
 
 -- // Obsidian Lib Components.
+shared.Settings.Fixer = 4;
+
 LoopModule.WhileLoop(0.1,function()
     if shared.Settings.AimbotChecks.WallCheck then
         print("Wall Checking.");
-		if Utils:SmartTimer("Fixer", 4) then -- // prints "Fixing" every 4 seconds indefintely. (Thats how you can manage more functions in the same loop instead of creating another loop)
+		if Utils:SmartTimer("Fixer", shared.Settings.Fixer or 4) then -- // Thats how you can manage more functions in the same loop instead of creating another loop.
 		   print("Fixing");
 		end
     end
