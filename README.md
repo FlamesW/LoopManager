@@ -20,22 +20,9 @@ shared.Settings = {
     },
 };
 
-local Utils = {}
 local LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/LoopManager/home/Module.luau"))();
-
-function Utils:SmartTimer(name, delay)
-    self._Timers = self._Timers or {}
-
-    local CT = tick()
-    local Last = self._Timers[name] or 0;
-
-    if CT - Last >= delay then
-        self._Timers[name] = CT;
-        return true;
-    end
-
-    return false;
-end
+local FunctionModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/FunctionManager/home/Module.luau"))();
+local Utility = FunctionModule.Launch({});
 
 -- // Obsidian Lib UI
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/deividcomsono/Obsidian/main/Library.lua"))();
@@ -60,7 +47,7 @@ shared.Settings.Fixer = 4;
 LoopModule.WhileLoop(0.1,function()
     if shared.Settings.AimbotChecks.WallCheck then
         print("Wall Checking.");
-		if Utils:SmartTimer("Fixer", shared.Settings.Fixer) then -- // Thats how you can manage more functions in the same loop instead of creating another loop.
+		if Utility:SmartTimer("Fixer", shared.Settings.Fixer) then -- // Thats how you can manage more functions in the same loop instead of creating another loop.
 		   print("Fixing");
 		end
     end
