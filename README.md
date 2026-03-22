@@ -1,4 +1,4 @@
-# Loop Manager Example:
+# Example Usage:
 ```lua
 getgenv().LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/LoopManager/home/Module.luau"))();
 
