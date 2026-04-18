@@ -1,3 +1,5 @@
+## Attention: I've migrated loop manager to https://github.com/FlamesW/FunctionManager/blob/home/Module.luau , code has been optimized and improved with tons of features.
+
 # Example Usage:
 ```lua
 getgenv().LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/LoopManager/home/Module.luau"))();
