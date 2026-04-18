@@ -1,4 +1,4 @@
-## Attention: I've migrated loop manager to https://github.com/FlamesW/FunctionManager/blob/home/Module.luau , code has been optimized and improved with tons of features.
+*** Attention: I've migrated loop manager to https://github.com/FlamesW/FunctionManager/blob/home/Module.luau , code has been optimized and improved with tons of features.
 
 # Example Usage:
 ```lua
