@@ -20,7 +20,6 @@ shared.Settings = {
     },
 };
 
-local LoopModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/LoopManager/home/Module.luau"))();
 local FunctionModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamesW/FunctionManager/home/Module.luau"))();
 local Utility = FunctionModule.Launch({});
 
@@ -44,7 +43,7 @@ local AimbotOptionsGroup = Tabs.Main:AddLeftGroupbox("Aimbot Options","file-code
 -- // Obsidian Lib Components.
 shared.Settings.Fixer = 4;
 
-LoopModule.WhileLoop(0.1,function()
+Utility:WhileLoop(0.1,function()
     if shared.Settings.AimbotChecks.WallCheck then
         print("Wall Checking.");
 		if Utility:SmartTimer("Fixer", shared.Settings.Fixer) then -- // Thats how you can manage more functions in the same loop instead of creating another loop.
